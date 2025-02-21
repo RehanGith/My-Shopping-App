@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-
+    alias(libs.plugins.dagger)
+    kotlin("kapt")
 }
 
 android {
@@ -41,6 +42,22 @@ android {
 }
 
 dependencies {
+    //dagger dependencies
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.kapt)
+    //Glide dependencies
+    implementation(libs.github.glide)
+    //retrofits
+    implementation(libs.android.retrofit.json)
+    implementation(libs.android.retrofit2)
+    //logging intercepter
+    implementation(libs.android.logging.interceptor)
+    //lifecycle
+    implementation(libs.androidx.lifecyle.viewmodel)
+    //navigation
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
