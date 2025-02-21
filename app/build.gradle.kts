@@ -57,6 +57,14 @@ dependencies {
     //navigation
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+    //firebase auth
+    implementation(libs.androidx.firebase)
+    //loading button
+    implementation(libs.androidx.loading.button)
+    //viewpager
+    implementation(libs.github.viewpager)
+    //circleimage
+    implementation(libs.shuhart.stepview)
 
 
     implementation(libs.androidx.core.ktx)
