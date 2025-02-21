@@ -18,7 +18,7 @@ lifecyle = "2.8.7"
 coroutine = "1.7.3"
 interceptor = "4.12.0"
 auth = "23.2.0"
-button = "2.2.0"
+button = "3.0.0"
 circleImage = "3.1.0"
 viewpager = "1.0.0-alpha.1"
 stepview= "1.5.1"
@@ -44,10 +44,10 @@ androidx-lifecyle-viewmodel = {group = "androidx.lifecycle", name = "lifecycle-v
 jetbrains-coroutine-kotlinx = {group = "org.jetbrains.kotlinx", name  = "kotlinx-coroutines-android", version.ref = "coroutine"}
 jetbrains-coroutine-core = {group = "org.jetbrains.kotlinx", name  = "kotlinx-coroutines-core", version.ref = "coroutine"}
 androidx-firebase = {group = "com.google.firebase", name = "firebase-auth", version.ref = "auth"}
-androidx-loading-button = {group = "br.com.simplepass", name = "loading-button-android", version.ref = "button"}
+androidx-loading-button = {group = "io.writeopia", name = "loading-button", version.ref = "button"}
 androidx-circular-image = {group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImage"}
-github-viewpager = {group = "io.github.vejei.viewpagerindicator", name = "viewpagerindicator", version.ref = "viewpager"}
-shuhart-stepview = {group = "com.shuhart.stepview", name = "stepview", version.ref = "stepview"}
+github-viewpager = {group = "com.github.vejei", name = "viewpagerindicator", version.ref = "viewpager"}
+shuhart-stepview = {group = "com.shuhart", name = "stepview", version.ref = "stepview"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
