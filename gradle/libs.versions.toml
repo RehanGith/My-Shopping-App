@@ -17,6 +17,7 @@ kotlinx=  "2.8.7"
 lifecyle = "2.8.7"
 coroutine = "1.7.3"
 interceptor = "4.12.0"
+auth = "23.2.0"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -38,7 +39,7 @@ androidx-navigation-ui = { group = "androidx.navigation", name  = "navigation-ui
 androidx-lifecyle-viewmodel = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecyle"}
 jetbrains-coroutine-kotlinx = {group = "org.jetbrains.kotlinx", name  = "kotlinx-coroutines-android", version.ref = "coroutine"}
 jetbrains-coroutine-core = {group = "org.jetbrains.kotlinx", name  = "kotlinx-coroutines-core", version.ref = "coroutine"}
-
+androidx-firebase = {group = "com.google.firebase", name = "firebase-auth", version.ref = "auth"}
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
