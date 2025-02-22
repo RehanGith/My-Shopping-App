@@ -19,6 +19,14 @@ class LoginViewModel @Inject constructor(
     val login = _login.asSharedFlow()
 
     fun loginUser(name : String, password : String) {
+        viewModelScope.launch {
+            _login.emit(Response.Loading())
+        }
+        if (name.isEmpty() || password.isEmpty()) {
+            viewModelScope.launch {
+                _login.emit(Response.Error("Empty fields are not allowed"))
+            }
+        }
         firebaseAuth.signInWithEmailAndPassword(name, password)
             .addOnSuccessListener {
                 viewModelScope.launch{
