@@ -133,7 +133,7 @@
                 app:layout_constraintEnd_toEndOf="@id/googleLogin"/>
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <io.writeopia.loadingbutton.customViews.CircularProgressButton
                 android:id="@+id/buttonLoginLogin"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/mediumButtonHeight"
