@@ -51,8 +51,9 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 is Response.Loading -> binding.buttonRegisterRegister.startAnimation()
                 is Response.Success -> {
                     binding.buttonRegisterRegister.revertAnimation()
+                    val navController = findNavController()
                     val navOptions = NavOptions.Builder()
-                        .setPopUpTo(R.id.registerFragment, true)
+                        .setPopUpTo(navController.graph.startDestinationId, true)
                         .build()
                     findNavController().navigate(R.id.action_registerFragment_to_shoppingFragment, null, navOptions)
                 }

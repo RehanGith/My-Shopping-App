@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.my_shoppings.R
@@ -47,9 +48,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                             binding.buttonLoginLogin.startAnimation()
                         }
                         is Response.Success -> {
+                            val navController = findNavController()
                             binding.buttonLoginLogin.revertAnimation()
                             val navOptions = NavOptions.Builder()
-                                .setPopUpTo(R.id.loginFragment, true)
+                                .setPopUpTo(navController.graph.startDestinationId, true)
                                 .build()
                             findNavController().navigate(R.id.action_loginFragment_to_shoppingFragment, null, navOptions)
                         }
