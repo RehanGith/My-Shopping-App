@@ -1,7 +1,6 @@
 package com.example.my_shoppings.util
 
 import android.util.Patterns
-import org.intellij.lang.annotations.Pattern
 
 fun validationCheckForEmail(email: String): RegisterValidation {
     if(email.isEmpty()) {
