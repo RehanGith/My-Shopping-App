@@ -44,7 +44,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
         registerViewModel.register.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Response.Error -> {
-                    Log.d("main", response.message.toString())
+                    Toast.makeText(requireContext(), response.message, Toast.LENGTH_LONG).show()
                     binding.buttonRegisterRegister.revertAnimation()
                 }
 
