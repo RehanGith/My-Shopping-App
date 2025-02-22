@@ -22,6 +22,7 @@ button = "3.0.0"
 circleImage = "3.1.0"
 viewpager = "1.0.0-alpha.1"
 stepview= "1.5.1"
+googleGmsGoogleServices = "4.4.2"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -53,3 +54,4 @@ shuhart-stepview = {group = "com.github.shuhart", name = "stepview", version.ref
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
