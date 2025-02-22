@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.my_shoppings.R
 import com.example.my_shoppings.databinding.FragmentLoginBinding
@@ -33,6 +34,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 loginViewModel.loginUser(email, password)
             }
         }
+
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 loginViewModel.login.collect {
@@ -46,7 +48,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         }
                         is Response.Success -> {
                             binding.buttonLoginLogin.revertAnimation()
-                            Log.d("LoginFragment", it.data.toString())
+                            val navOptions = NavOptions.Builder()
+                                .setPopUpTo(R.id.loginFragment, true)
+                                .build()
+                            findNavController().navigate(R.id.action_loginFragment_to_shoppingFragment, null, navOptions)
                         }
                     }
                 }

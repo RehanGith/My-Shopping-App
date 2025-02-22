@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
 import com.example.my_shoppings.R
 import com.example.my_shoppings.databinding.FragmentRegisterBinding
 import com.example.my_shoppings.model.User
@@ -48,8 +50,11 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
 
                 is Response.Loading -> binding.buttonRegisterRegister.startAnimation()
                 is Response.Success -> {
-                    Log.d("main", response.data.toString())
                     binding.buttonRegisterRegister.revertAnimation()
+                    val navOptions = NavOptions.Builder()
+                        .setPopUpTo(R.id.registerFragment, true)
+                        .build()
+                    findNavController().navigate(R.id.action_registerFragment_to_shoppingFragment, null, navOptions)
                 }
 
                 else -> Log.d("main", "unspecified")
