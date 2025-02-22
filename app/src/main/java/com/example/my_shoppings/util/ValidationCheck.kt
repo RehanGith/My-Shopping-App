@@ -7,7 +7,7 @@ fun validationCheckForEmail(email: String): RegisterValidation {
     if(email.isEmpty()) {
         return RegisterValidation.failure("email cannot be empty")
     }
-    if(!Patterns.EMAIL_ADDRESS.equals(email)){
+    if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
         return RegisterValidation.failure("email is not valid")
     }
     return RegisterValidation.sucess

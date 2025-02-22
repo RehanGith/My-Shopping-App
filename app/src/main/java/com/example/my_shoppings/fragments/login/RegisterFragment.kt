@@ -3,20 +3,19 @@ package com.example.my_shoppings.fragments.login
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import com.example.my_shoppings.R
 import com.example.my_shoppings.databinding.FragmentRegisterBinding
 import com.example.my_shoppings.model.User
+import com.example.my_shoppings.util.RegisterValidation
 import com.example.my_shoppings.util.Response
 import com.example.my_shoppings.viewModel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+
 @AndroidEntryPoint
-class RegisterFragment : Fragment(R.layout.fragment_register){
+class RegisterFragment : Fragment(R.layout.fragment_register) {
     private lateinit var binding: FragmentRegisterBinding
     private val registerViewModel by viewModels<RegisterViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -27,41 +26,51 @@ class RegisterFragment : Fragment(R.layout.fragment_register){
             Log.d("main", "register fragment")
             buttonRegisterRegister.setOnClickListener {
                 val user = User(
-                    edFirstNameRegister.text.toString(),
-                    edLastNameRegister.text.toString(),
-                    edEmailRegister.text.toString()
+                    edFirstNameRegister.text.toString().trim(),
+                    edLastNameRegister.text.toString().trim(),
+                    edEmailRegister.text.toString().trim()
                 )
 
                 val password = edPasswordRegister.text.toString()
-                if(user.firstName.isEmpty() || user.lastName.isEmpty() || user.email.isEmpty() || password.isEmpty()) {
-                    Log.d("main", "empty fields")
+                if (user.firstName.isEmpty() || user.lastName.isEmpty() || user.email.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(requireContext(), "Please fill the fields", Toast.LENGTH_LONG).show()
                 } else {
                     registerViewModel.createAccount(user, password)
                 }
             }
         }
+        registerViewModel.register.observe(viewLifecycleOwner) { response ->
+            when (response) {
+                is Response.Error -> {
+                    Log.d("main", response.message.toString())
+                    binding.buttonRegisterRegister.revertAnimation()
+                }
 
+                is Response.Loading -> binding.buttonRegisterRegister.startAnimation()
+                is Response.Success -> {
+                    Log.d("main", response.data.toString())
+                    binding.buttonRegisterRegister.revertAnimation()
+                }
 
+                else -> Log.d("main", "unspecified")
+            }
+        }
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                registerViewModel.register.collect { response ->
-                    when(response) {
-                        is Response.Error -> {
-                            Log.d("main", response.message.toString())
-                            binding.buttonRegisterRegister.revertAnimation()
-                        }
-                        is Response.Loading -> binding.buttonRegisterRegister.startAnimation()
-                        is Response.Success -> {
-                            Log.d("main", response.data.toString())
-                            binding.buttonRegisterRegister.revertAnimation()
-                        }
-
-                        is Response.Unspecified -> Log.d("main", "unspecified")
-                    }
+        registerViewModel.validation.observe(viewLifecycleOwner) {validation->
+            if(validation.email is RegisterValidation.failure){
+                binding.edEmailRegister.apply {
+                    requestFocus()
+                    error = validation.email.msg
+                }
+            }
+            if(validation.password is RegisterValidation.failure){
+                binding.edPasswordRegister.apply {
+                    requestFocus()
+                    error = validation.password.msg
                 }
             }
         }
+
 
     }
 }

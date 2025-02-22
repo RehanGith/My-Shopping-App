@@ -69,6 +69,10 @@ dependencies {
     implementation(libs.jetbrains.stdlib)
     implementation(libs.androidx.circular.image)
 
+    //coroutine
+    implementation(libs.jetbrains.coroutine.core)
+    implementation(libs.jetbrains.coroutine.kotlinx)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
