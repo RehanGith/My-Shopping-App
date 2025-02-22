@@ -1,6 +1,5 @@
 package com.example.my_shoppings.viewModel
 
-import android.view.View
 import androidx.lifecycle.ViewModel
 import com.example.my_shoppings.model.User
 import com.example.my_shoppings.util.Response
@@ -12,7 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(
+class RegisterViewModel @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) : ViewModel(){
     private var _register = MutableStateFlow<Response<FirebaseUser>>(Response.Loading())
