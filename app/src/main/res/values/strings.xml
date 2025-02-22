@@ -4,4 +4,8 @@
     <string name="qulity">It is now very easy to reach the\nbest quality among the\nproducts on the internet!</string>
     <string name="left_image">left_image</string>
     <string name="start">Start</string>
+    <string name="background">background</string>
+    <string name="shopping_s">Shopping\'s.</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
 </resources>
