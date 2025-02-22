@@ -24,18 +24,23 @@ class RegisterFragment : Fragment(R.layout.fragment_register){
         binding = FragmentRegisterBinding.bind(view)
 
         binding.apply {
+            Log.d("main", "register fragment")
             buttonRegisterRegister.setOnClickListener {
                 val user = User(
                     edFirstNameRegister.text.toString(),
                     edLastNameRegister.text.toString(),
                     edEmailRegister.text.toString()
                 )
+
                 val password = edPasswordRegister.text.toString()
                 if(user.firstName.isEmpty() || user.lastName.isEmpty() || user.email.isEmpty() || password.isEmpty()) {
+                    Log.d("main", "empty fields")
+                } else {
                     registerViewModel.createAccount(user, password)
                 }
             }
         }
+
 
 
         viewLifecycleOwner.lifecycleScope.launch {

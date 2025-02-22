@@ -1,5 +1,6 @@
 package com.example.my_shoppings.viewModel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.my_shoppings.model.User
 import com.example.my_shoppings.util.Response
@@ -8,6 +9,7 @@ import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,6 +21,10 @@ class RegisterViewModel @Inject constructor(
         get() = _register
 
     fun createAccount(user : User , password : String){
+        Log.d("test",user.toString())
+        runBlocking {
+            _register.emit(Response.Loading())
+        }
         firebaseAuth.createUserWithEmailAndPassword(user.email, password)
             .addOnSuccessListener {
                 it.user?.let {
