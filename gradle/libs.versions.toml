@@ -23,6 +23,7 @@ circleImage = "3.1.0"
 viewpager = "1.0.0-alpha.1"
 stepview= "1.5.1"
 googleGmsGoogleServices = "4.4.2"
+firebaseFirestore = "25.1.2"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -49,6 +50,7 @@ androidx-loading-button = {group = "io.writeopia", name = "loading-button", vers
 androidx-circular-image = {group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImage"}
 github-viewpager = {group = "com.github.vejei", name = "viewpagerindicator", version.ref = "viewpager"}
 shuhart-stepview = {group = "com.github.shuhart", name = "stepview", version.ref = "stepview"}
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

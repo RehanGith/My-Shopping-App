@@ -45,6 +45,7 @@ android {
 dependencies {
     //dagger dependencies
     implementation(libs.dagger.hilt)
+    implementation(libs.firebase.firestore)
     kapt(libs.dagger.kapt)
     //Glide dependencies
     implementation(libs.github.glide)
