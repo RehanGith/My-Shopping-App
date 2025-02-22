@@ -30,9 +30,7 @@ class RegisterViewModel @Inject constructor(
     fun createAccount(user : User , password : String){
         if(!checkValidation(user,password)){
             val registerField = RegisterFieldValidation(validationCheckForEmail(user.email), validationCheckForPassword(password))
-            viewModelScope.launch {
-                _validation.value = registerField
-            }
+            _validation.value = registerField
         }
         viewModelScope.launch{
             _register.value = Response.Loading()
