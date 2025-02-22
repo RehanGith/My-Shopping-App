@@ -20,4 +20,8 @@
     <string name="do_you_have_an_account_log_in">Do you have an account? log in</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last name</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="we_will_send_you_the_password_reset_link_to_your_email">We will send you the password reset link to your email</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
 </resources>
