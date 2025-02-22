@@ -66,6 +66,7 @@ dependencies {
     //circleimage
     implementation(libs.shuhart.stepview)
     implementation(libs.jetbrains.stdlib)
+    implementation(libs.androidx.circular.image)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

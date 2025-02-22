@@ -5,7 +5,15 @@
     <string name="left_image">left_image</string>
     <string name="start">Start</string>
     <string name="background">background</string>
-    <string name="shopping_s">Shopping\'s.</string>
+    <string name="shopping_s">My_Shopping\'s.</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
+    <string name="let_s_login">Let\'s Login</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="facbook_login">facbook_login</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">google</string>
 </resources>
