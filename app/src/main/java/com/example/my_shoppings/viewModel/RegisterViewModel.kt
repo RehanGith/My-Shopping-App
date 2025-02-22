@@ -14,7 +14,7 @@ import javax.inject.Inject
 class RegisterViewModel @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) : ViewModel(){
-    private var _register = MutableStateFlow<Response<FirebaseUser>>(Response.Loading())
+    private var _register = MutableStateFlow<Response<FirebaseUser>>(Response.Unspecified())
     val register : Flow<Response<FirebaseUser>>
         get() = _register
 

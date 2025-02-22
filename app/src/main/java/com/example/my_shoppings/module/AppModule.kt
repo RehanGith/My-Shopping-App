@@ -1,5 +1,6 @@
 package com.example.my_shoppings.module
 
+import com.example.my_shoppings.viewModel.RegisterViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
 import dagger.Provides
@@ -14,6 +15,5 @@ object AppModule {
     @Provides
     @Singleton
     fun providesFirebaseAuth() = FirebaseAuth.getInstance()
-
 
 }

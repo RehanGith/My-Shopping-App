@@ -13,8 +13,9 @@ import com.example.my_shoppings.databinding.FragmentRegisterBinding
 import com.example.my_shoppings.model.User
 import com.example.my_shoppings.util.Response
 import com.example.my_shoppings.viewModel.RegisterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class RegisterFragment : Fragment(R.layout.fragment_register){
     private lateinit var binding: FragmentRegisterBinding
     private val registerViewModel by viewModels<RegisterViewModel>()
@@ -30,10 +31,13 @@ class RegisterFragment : Fragment(R.layout.fragment_register){
                     edEmailRegister.text.toString()
                 )
                 val password = edPasswordRegister.text.toString()
-                registerViewModel.createAccount(user, password)
-
+                if(user.firstName.isEmpty() || user.lastName.isEmpty() || user.email.isEmpty() || password.isEmpty()) {
+                    registerViewModel.createAccount(user, password)
+                }
             }
         }
+
+
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 registerViewModel.register.collect { response ->
@@ -47,6 +51,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register){
                             Log.d("main", response.data.toString())
                             binding.buttonRegisterRegister.revertAnimation()
                         }
+
+                        is Response.Unspecified -> Log.d("main", "unspecified")
                     }
                 }
             }
