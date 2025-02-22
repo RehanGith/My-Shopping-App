@@ -65,7 +65,7 @@ dependencies {
     implementation(libs.github.viewpager)
     //circleimage
     implementation(libs.shuhart.stepview)
-
+    implementation(libs.jetbrains.stdlib)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -1,6 +1,6 @@
 [versions]
 agp = "8.4.2"
-kotlin = "1.9.0"
+kotlin = "2.1.10"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -39,7 +39,7 @@ github-glide = {group = "com.github.bumptech.glide", name = "glide", version.ref
 android-logging-interceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "interceptor"}
 androidx-navigation-fragment = { group= "androidx.navigation", name ="navigation-fragment-ktx", version.ref = "kotlinx" }
 androidx-navigation-ui = { group = "androidx.navigation", name  = "navigation-ui-ktx", version.ref = "kotlinx" }
-
+jetbrains-stdlib = {group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin"}
 androidx-lifecyle-viewmodel = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecyle"}
 jetbrains-coroutine-kotlinx = {group = "org.jetbrains.kotlinx", name  = "kotlinx-coroutines-android", version.ref = "coroutine"}
 jetbrains-coroutine-core = {group = "org.jetbrains.kotlinx", name  = "kotlinx-coroutines-core", version.ref = "coroutine"}
@@ -47,7 +47,7 @@ androidx-firebase = {group = "com.google.firebase", name = "firebase-auth", vers
 androidx-loading-button = {group = "io.writeopia", name = "loading-button", version.ref = "button"}
 androidx-circular-image = {group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImage"}
 github-viewpager = {group = "com.github.vejei", name = "viewpagerindicator", version.ref = "viewpager"}
-shuhart-stepview = {group = "com.shuhart", name = "stepview", version.ref = "stepview"}
+shuhart-stepview = {group = "com.github.shuhart", name = "stepview", version.ref = "stepview"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
