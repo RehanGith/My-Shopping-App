@@ -35,6 +35,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 loginViewModel.loginUser(email, password)
             }
         }
+        binding.tvDontHaveAccount.setOnClickListener {
+            val navOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.loginFragment, true)
+                .build()
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment, null, navOptions)
+        }
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {

@@ -41,6 +41,12 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 }
             }
         }
+        binding.tvDoYouHaveAccount.setOnClickListener {
+            val navOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.registerFragment, true)
+                .build()
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment, null , navOptions)
+        }
         registerViewModel.register.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Response.Error -> {
