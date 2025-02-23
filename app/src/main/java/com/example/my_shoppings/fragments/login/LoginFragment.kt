@@ -1,5 +1,6 @@
 package com.example.my_shoppings.fragments.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.my_shoppings.R
+import com.example.my_shoppings.app.ShoppingActivity
 import com.example.my_shoppings.databinding.FragmentLoginBinding
 import com.example.my_shoppings.dialogs.setUpBottomDialog
 import com.example.my_shoppings.util.Response
@@ -61,7 +63,11 @@ class LoginFragment : Fragment(R.layout.fragment_login){
                         }
                         is Response.Success -> {
                             binding.buttonLoginLogin.revertAnimation()
-
+                            val intent = Intent(requireActivity(), ShoppingActivity::class.java).apply {
+                                flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                            }
+                            startActivity(intent)
+                            requireActivity().finish()
                         }
                         else -> Unit
                     }

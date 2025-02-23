@@ -1,5 +1,6 @@
 package com.example.my_shoppings.fragments.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.my_shoppings.R
+import com.example.my_shoppings.app.ShoppingActivity
 import com.example.my_shoppings.databinding.FragmentRegisterBinding
 import com.example.my_shoppings.model.User
 import com.example.my_shoppings.util.RegisterValidation
@@ -57,7 +59,11 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 is Response.Loading -> binding.buttonRegisterRegister.startAnimation()
                 is Response.Success -> {
                     binding.buttonRegisterRegister.revertAnimation()
-
+                    val intent = Intent(requireActivity(), ShoppingActivity::class.java).apply {
+                        flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    }
+                    startActivity(intent)
+                    requireActivity().finish()
                 }
 
                 else -> Log.d("main", "unspecified")
