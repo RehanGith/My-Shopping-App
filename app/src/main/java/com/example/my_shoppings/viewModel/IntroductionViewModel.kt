@@ -6,13 +6,14 @@ import androidx.lifecycle.viewModelScope
 import com.example.my_shoppings.R
 import com.example.my_shoppings.util.Constant
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
+@HiltViewModel
 class IntroductionViewModel @Inject constructor(
-    private val sharedPreferences: SharedPreferences
+    private val sharedPreferences: SharedPreferences,
     private val firebaseAuth: FirebaseAuth
 ) : ViewModel() {
     private var _navigation = MutableStateFlow(0)
