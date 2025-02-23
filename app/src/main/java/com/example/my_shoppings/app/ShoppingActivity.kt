@@ -3,11 +3,10 @@ package com.example.my_shoppings.app
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.my_shoppings.R
 import com.example.my_shoppings.databinding.ActivityShoppingBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ShoppingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityShoppingBinding
@@ -17,9 +16,9 @@ class ShoppingActivity : AppCompatActivity() {
         binding = ActivityShoppingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navController = findNavController(R.id.fragmentContainerView)
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
-        bottomNav.setupWithNavController(navController)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHostFragment.navController
+        NavigationUI.setupWithNavController(binding.bottomNav, navController)
 
     }
 }
