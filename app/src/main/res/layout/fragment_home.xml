@@ -20,7 +20,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/searchBar"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/search_box_background">
@@ -33,7 +33,7 @@
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     android:singleLine="true"
-                    android:text="Search Now"
+                    android:text="@string/search_now"
                     android:textColor="#919394"
                     android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"

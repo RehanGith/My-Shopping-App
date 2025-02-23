@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Settings"
+                    android:text="@string/settings"
                     app:layout_constraintStart_toStartOf="@id/guideline1"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="3dp"
-                        android:text="Name"
+                        android:text="@string/name"
                         app:layout_constraintStart_toEndOf="@id/imageUser"
                         app:layout_constraintTop_toTopOf="@+id/imageUser" />
 
@@ -76,7 +76,7 @@
                         style="@style/SmallTextViewThin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="edit personal details"
+                        android:text="@string/edit_personal_details"
                         app:layout_constraintStart_toStartOf="@+id/tvUserName"
                         app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
@@ -99,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Orders"
+                    android:text="@string/orders"
                     android:textColor="@color/g_gray700"
                     android:textStyle="normal"
                     app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -139,7 +139,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="15dp"
                             android:layout_weight="1"
-                            android:text="All orders"
+                            android:text="@string/all_orders"
                             android:textColor="@color/g_gray700"
                             android:textStyle="bold" />
 
@@ -176,7 +176,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="15dp"
                             android:layout_weight="1"
-                            android:text="Track Orders"
+                            android:text="@string/track_orders"
                             android:textColor="@color/g_gray700"
                             android:textStyle="bold" />
 
@@ -212,7 +212,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="15dp"
                             android:layout_weight="1"
-                            android:text="Billing"
+                            android:text="@string/billing"
                             android:textColor="@color/g_gray700"
                             android:textStyle="bold" />
 
@@ -232,7 +232,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="Notifications"
+                    android:text="@string/notifications"
                     android:textColor="@color/g_gray700"
                     android:textStyle="normal"
                     app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -270,7 +270,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="15dp"
                             android:layout_weight="1"
-                            android:text="Notifications"
+                            android:text="@string/notifications"
                             android:textColor="@color/g_gray700"
                             android:textStyle="bold" />
 
@@ -292,7 +292,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Regional"
+                    android:text="@string/regional"
                     android:textColor="@color/g_gray700"
                     android:textStyle="normal"
                     app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -334,7 +334,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="15dp"
                             android:layout_weight="1"
-                            android:text="Logout"
+                            android:text="@string/logout"
                             android:textColor="@color/g_gray700"
                             android:textStyle="bold" />
 
@@ -356,13 +356,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/sf_pro_display"
-                    android:text="Version 1.0"
+                    android:text="@string/version_1_0"
                     android:textColor="@color/g_gray700"
                     android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/guideline2"
                     app:layout_constraintStart_toStartOf="@id/guideline1"
-                    app:layout_constraintTop_toBottomOf="@+id/linear_regional" />
+                    app:layout_constraintTop_toBottomOf="@+id/linear_regional"
+                    tools:ignore="SmallSp" />
 
 
                 <androidx.constraintlayout.widget.Guideline
