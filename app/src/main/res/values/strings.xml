@@ -41,4 +41,8 @@
     <string name="regional">Regional</string>
     <string name="version_1_0">Version 1.0</string>
     <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="cart">Cart</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
 </resources>
