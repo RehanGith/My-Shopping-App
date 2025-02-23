@@ -60,13 +60,10 @@ class LoginFragment : Fragment(R.layout.fragment_login){
                             binding.buttonLoginLogin.startAnimation()
                         }
                         is Response.Success -> {
-                            val navController = findNavController()
                             binding.buttonLoginLogin.revertAnimation()
-                            val navOptions = NavOptions.Builder()
-                                .setPopUpTo(navController.graph.startDestinationId, true)
-                                .build()
-                            findNavController().navigate(R.id.action_loginFragment_to_shoppingFragment, null, navOptions)
+
                         }
+                        else -> Unit
                     }
                 }
             }
