@@ -1,5 +1,8 @@
 package com.example.my_shoppings.module
 
+import android.app.Application
+import android.content.Context
+import com.example.my_shoppings.util.Constant
 import com.example.my_shoppings.viewModel.RegisterViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,4 +23,9 @@ object AppModule {
     @Provides
     @Singleton
     fun providesFireStore() = FirebaseFirestore.getInstance()
+
+    @Provides
+    fun providesSharedPreference(application: Application) = application.getSharedPreferences(Constant.INTRODUCTION_SP,
+        Context.MODE_PRIVATE
+    )
 }
