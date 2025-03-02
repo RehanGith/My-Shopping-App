@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.my_shoppings.R
+import com.example.my_shoppings.adapter.ViewPagerAdapter
 import com.example.my_shoppings.databinding.FragmentHomeBinding
 import com.example.my_shoppings.fragments.categories.AccessoryFragment
 import com.example.my_shoppings.fragments.categories.CupboardFragment
@@ -26,6 +27,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             AccessoryFragment(),
             FurnitureFragment()
         )
+        initViewPager(categoryFragments)
         initTabLayout()
 
     }
@@ -37,5 +39,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
 
-
+    private fun initViewPager(categoryFragment: List<Fragment>) {
+        val viewPagerAdapter = ViewPagerAdapter(categoryFragment, childFragmentManager, lifecycle)
+        binding.viewpagerHome.adapter = viewPagerAdapter
+        binding.viewpagerHome.isUserInputEnabled = false
+    }
 }
