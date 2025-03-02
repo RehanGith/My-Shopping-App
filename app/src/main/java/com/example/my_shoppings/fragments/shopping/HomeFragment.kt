@@ -10,6 +10,7 @@ import com.example.my_shoppings.fragments.categories.CupboardFragment
 import com.example.my_shoppings.fragments.categories.FurnitureFragment
 import com.example.my_shoppings.fragments.categories.MainCategoryFragment
 import com.example.my_shoppings.fragments.categories.TableFragment
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var binding: FragmentHomeBinding
@@ -25,7 +26,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             AccessoryFragment(),
             FurnitureFragment()
         )
+        initTabLayout()
 
     }
+
+    private fun initTabLayout() {
+        TabLayoutMediator(binding.tabLayout, binding.viewpagerHome) { tab, position ->
+            tab.text = titlesCategory[position]
+        }.attach()
+    }
+
+
 
 }
